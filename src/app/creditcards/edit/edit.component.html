@@ -1,0 +1,55 @@
+<p>edit works!</p>
+<mat-card>
+
+    <mat-card-header>
+        <mat-card-title>Edit Credit Card</mat-card-title>
+    </mat-card-header>
+
+        <button>Open dialog
+    <ng-template>
+      <mat-card-content> 
+        <form [formGroup]="editCreditCardForm" >
+        <!-- (ngSubmit)="onSubmit()"> -->
+
+            <div class="form-group">
+                <mat-form-field class="half-width">
+                    <label>Credit Card Name</label>
+                    <input matInput placeholder="Credit Card Name" formControlName="name">
+                    <mat-error *ngIf="editCreditCardForm.get('name')?.hasError('required')">Name is required</mat-error>
+                    <mat-error *ngIf="editCreditCardForm.get('name')?.hasError('required')">Name min length is 3 </mat-error>
+                    <mat-error *ngIf="editCreditCardForm.get('name')?.hasError('required')">Name max length is 20</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="half-width">
+                    <label>Description</label>
+                    <input matInput placeholder="Credit Card description" formControlName="description">
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="half-width">
+                    <label>Max credit</label>
+                    <input matInput placeholder="Credit Card maxCredit" formControlName="maxCredit">
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="half-width">
+                    <label>Interest Rate</label>
+                    <input matInput placeholder="Credit Card interestRate" formControlName="interestRate">
+                </mat-form-field>
+            </div>
+            <!-- <div class="form-group">
+                <mat-form-field class="half-width">
+                    <label>Interest Rate</label>
+                    <mat-select aria-placeholder="Credit Card recommendedCreditScore" formControlName="recommendedCreditScore">
+                        <mat-option value="100-500">100-500</mat-option>
+                        <mat-option value="500-700">100-500</mat-option>
+                        <mat-option value="800-900">100-500</mat-option>
+                </mat-select>
+            </div> -->
+        </form>
+    </mat-card-content>
+</ng-template>
+        </button>
+
+</mat-card>
